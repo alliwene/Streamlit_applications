@@ -1,13 +1,24 @@
 import streamlit as st
+import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 import os
+import pickle
 import joblib
 
 ##############################################################################################
 #untilities
 
+def interpreter(number):
+
+    if number == 0:
+        return 'Iris-Setosa'
+    elif number ==1:
+        return 'Iris-Versicolour'
+
+    else:
+        return 'Iris-Virginica'
 
 
 
@@ -15,7 +26,7 @@ import joblib
 
 
 def main():
-    page = st.sidebar.selectbox("Choose a page",["About App","Problem Statement","Data Explorer","Machine Learning"])
+    page = st.sidebar.selectbox("Choose a page",["About App","Data Explorer","Machine Learning"])
 
     if page =="About App":
         st.title("The Gradient Boost Streamlit Demonstration")
@@ -69,6 +80,27 @@ def main():
 
     if page =="Machine Learning":
         st.title("Machine Learning")
+
+
+        
+        if st.checkbox("Predict Flower Class"):
+            s_len = st.number_input('Sepal Length')
+            s_wid = st.number_input('Sepal Width')
+
+            p_len = st.number_input('Petal Length')
+            p_wid = st.number_input('Petal Width')
+            model_name = 'models/decision_tree_model.sav'
+            model = pickle.load(open(model_name,'rb'))
+            if st.button('Perform the classification task'):
+
+                mylist = np.array([s_len,s_wid,p_len,p_wid]).reshape(1,-1)
+
+                result = interpreter(model.predict(mylist))
+                
+                result = "The species in question is"+" " + result
+                st.title(result)
+                
+
 
 
 
