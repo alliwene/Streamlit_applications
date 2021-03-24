@@ -40,19 +40,17 @@ def main():
 
 
 
-        col1,mid,col2 = st.beta_columns([2,2,3])
+        col1,mid,col2 = st.beta_columns([1,1,1])
         with col1:
-            st.image('images/GB.png',width=300)
+            st.image('images/ironman2.jpg',width=300)
             st.markdown('**Name Surname**')
         with col2:
-            st.image('images/GB.png',width=300)
+            st.image('images/ironman2.jpg',width=300)
             st.markdown('**Name Surname**')
         
 
     if page =="Data Explorer":
-        st.title("Explore the dataset")
-        st.markdown(""" This page is buggy.... still to figure out why""")
-        
+        st.title("Explore Your Dataset")
         data = st.file_uploader("Only csv files allowed",type=['csv'])
 
         if data:
