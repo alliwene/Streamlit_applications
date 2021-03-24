@@ -3,6 +3,15 @@ The purpose of this repository is to store code for Streamlit demo apps. A numbe
 and showcased here. All the applications here will be based on class room machine learning problems.
 
 
+## Dependencies
+```bash
+pandas --> data wrangling
+
+numpy --> matrix computations
+streamlit --> actual library
+pickle --> to load ML models
+```
+
 ## Running the app
 
 ```bash
