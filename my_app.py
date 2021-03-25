@@ -59,7 +59,7 @@ def main():
             st.title("Look at the DataFrame")
             st.dataframe(data)
 
-            if st.checkbox("Visualize the data?"):
+            with st.beta_expander("Visualize the data?"):
                 dim=(15.0,10.0)
                 fig = plt.figure(figsize=dim)
 
@@ -81,7 +81,7 @@ def main():
 
 
         
-        if st.checkbox("Predict Flower Class"):
+        with st.beta_expander("Predict Flower Class"):
             s_len = st.number_input('Sepal Length')
             s_wid = st.number_input('Sepal Width')
 
