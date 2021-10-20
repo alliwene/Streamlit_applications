@@ -79,8 +79,6 @@ def main():
     if page =="Machine Learning":
         st.title("Machine Learning")
 
-
-        
         with st.expander("Predict Flower Class"):
             s_len = st.number_input('Sepal Length')
             s_wid = st.number_input('Sepal Width')
@@ -99,8 +97,12 @@ def main():
                 st.title(result)
                 
 
+        with st.expander("Predict movie rating"):
+            movie_num = st.number_input('movie number')
 
-
+            if st.button('Rate the movie'):
+                result = "Movie Rating: 6.7"
+                st.title(result)
 
 if __name__=="__main__":
     main()
