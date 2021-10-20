@@ -107,6 +107,8 @@ def main():
     if page =="Opinion pieces":
         st.title("Opinion Pieces")
         with st.expander("Data Engineering"):
+            st.markdown("I am gonna write about Data engineering here.")
+
 
 if __name__=="__main__":
     main()
