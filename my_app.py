@@ -43,7 +43,7 @@ def main():
         col1,mid,col2 = st.columns([1,1,1])
         with col1:
             st.image('images/ironman2.jpg',width=300)
-            st.markdown('**Name Surname**')
+            st.markdown('**Iron Man**')
         with col2:
             st.image('images/ironman2.jpg',width=300)
             st.markdown('**Name Surname**')
@@ -108,6 +108,10 @@ def main():
         st.title("Opinion Pieces")
         with st.expander("Data Engineering"):
             st.markdown("I am gonna write about Data engineering here.")
+            
+        with st.expander("Data Science"):
+            st.markdown("I am gonna write about Data science here.")
+         
 
 
 if __name__=="__main__":
