@@ -26,7 +26,7 @@ def interpreter(number):
 
 
 def main():
-    page = st.sidebar.selectbox("Choose a page",["About App","Data Explorer","Machine Learning"])
+    page = st.sidebar.selectbox("Choose a page",["About App","Data Explorer","Machine Learning","Opinion pieces"])
 
     if page =="About App":
         st.title("The Gradient Boost Streamlit Demonstration")
@@ -96,13 +96,16 @@ def main():
                 result = "The species in question is"+" " + result
                 st.title(result)
                 
-
+        st.title('Regression problems')
         with st.expander("Predict movie rating"):
             movie_num = st.number_input('movie number')
 
             if st.button('Rate the movie'):
                 result = "Movie Rating: 6.7"
                 st.title(result)
+
+    if page =="Opinion pieces":
+        st.title("Opinion Pieces")
 
 if __name__=="__main__":
     main()
