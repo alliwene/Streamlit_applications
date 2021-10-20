@@ -40,7 +40,7 @@ def main():
 
 
 
-        col1,mid,col2 = st.beta_columns([1,1,1])
+        col1,mid,col2 = st.columns([1,1,1])
         with col1:
             st.image('images/ironman2.jpg',width=300)
             st.markdown('**Name Surname**')
@@ -59,7 +59,7 @@ def main():
             st.title("Look at the DataFrame")
             st.dataframe(data)
 
-            with st.beta_expander("Visualize the data?"):
+            with st.expander("Visualize the data?"):
                 dim=(15.0,10.0)
                 fig = plt.figure(figsize=dim)
 
@@ -81,7 +81,7 @@ def main():
 
 
         
-        with st.beta_expander("Predict Flower Class"):
+        with st.expander("Predict Flower Class"):
             s_len = st.number_input('Sepal Length')
             s_wid = st.number_input('Sepal Width')
 
