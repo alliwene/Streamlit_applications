@@ -106,7 +106,7 @@ def main():
 
     if page =="Opinion pieces":
         st.title("Opinion Pieces")
-        with st.expander("Data Engineering")
+        with st.expander("Data Engineering"):
 
 if __name__=="__main__":
     main()
