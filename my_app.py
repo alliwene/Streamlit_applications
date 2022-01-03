@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 import pandas as pd
 import seaborn as sns
 import os
@@ -26,7 +26,7 @@ def interpreter(number):
 
 
 def main():
-    page = st.sidebar.selectbox("Choose a page",["About App","Data Explorer","Machine Learning"])
+    page = st.sidebar.selectbox("Choose a page",["About App","Data Explorer","Machine Learning","Opinion pieces"])
 
     if page =="About App":
         st.title("The Gradient Boost Streamlit Demonstration")
@@ -40,10 +40,10 @@ def main():
 
 
 
-        col1,mid,col2 = st.beta_columns([1,1,1])
+        col1,mid,col2 = st.columns([1,1,1])
         with col1:
             st.image('images/ironman2.jpg',width=300)
-            st.markdown('**Name Surname**')
+            st.markdown('**Iron Man**')
         with col2:
             st.image('images/ironman2.jpg',width=300)
             st.markdown('**Name Surname**')
@@ -59,7 +59,7 @@ def main():
             st.title("Look at the DataFrame")
             st.dataframe(data)
 
-            with st.beta_expander("Visualize the data?"):
+            with st.expander("Visualize the data?"):
                 dim=(15.0,10.0)
                 fig = plt.figure(figsize=dim)
 
@@ -79,9 +79,7 @@ def main():
     if page =="Machine Learning":
         st.title("Machine Learning")
 
-
-        
-        with st.beta_expander("Predict Flower Class"):
+        with st.expander("Predict Flower Class"):
             s_len = st.number_input('Sepal Length')
             s_wid = st.number_input('Sepal Width')
 
@@ -98,8 +96,22 @@ def main():
                 result = "The species in question is"+" " + result
                 st.title(result)
                 
+        st.title('Regression problems')
+        with st.expander("Predict movie rating"):
+            movie_num = st.number_input('movie number')
 
+            if st.button('Rate the movie'):
+                result = "Movie Rating: 6.7"
+                st.title(result)
 
+    if page =="Opinion pieces":
+        st.title("Opinion Pieces")
+        with st.expander("Data Engineering"):
+            st.markdown("I am gonna write about Data engineering here.")
+            
+        with st.expander("Data Science"):
+            st.markdown("I am gonna write about Data science here.")
+         
 
 
 if __name__=="__main__":
